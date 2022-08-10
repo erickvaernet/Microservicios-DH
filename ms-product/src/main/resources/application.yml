@@ -1,1 +1,45 @@
+spring:
+  application:
+    name: ms-product
+server:
+  port: ${PORT:0}
 
+#logging
+logging:
+  level:
+    io.r2dbc.postgresql.QUERY: DEBUG #for queries
+    io.r2dbc.postgresql.PARAM: DEBUG #for parameters
+
+#swagger
+spingdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  package-to-scan: com.dh.msproduct.handlers
+
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
+  info:
+    env:
+      enabled: true
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+
+#info properties
+
+info:
+  app:
+    name: ms-product
+    description: product microservice
+    version: 1.0.0
+    contact:
+      name: Erick Vaernet
+      email: erickadrielnet@gmail.com
+    svc:
+      port: ${server.port}
