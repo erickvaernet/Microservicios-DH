@@ -32,7 +32,6 @@ public class ProductHandler {
     @SneakyThrows
     public Mono<ServerResponse> getProduct(ServerRequest request){
         var id= request.pathVariable("id");
-
         return productService.findProductById(id)
                 .flatMap(product -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
                         .body(BodyInserters.fromValue(product)))

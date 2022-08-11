@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ms-product" target="17" />
+      <module name="untitled" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -23,14 +23,14 @@ public class ProductService  implements  IProductService {
     }
     @Override
     public Mono<Product> findProductById(String id) {
-        return null;
+        return productRepository.findById(id);
     }
     @Override
     public Mono<Product> saveProduct(Product product) {
-        return null;
+        return productRepository.save(product);
     }
     @Override
     public Mono<Void> deleteProduct(String id) {
-        return null;
+        return productRepository.deleteById(id);
     }
 }
